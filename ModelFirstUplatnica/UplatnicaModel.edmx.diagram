@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c6252e20c54b4d94ab8608bed25176bc" Name="Diagram1" >
+        <EntityTypeShape EntityType="UplatnicaModel.SifarnikPartner" Width="1.5" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="UplatnicaModel.Otpremnica" Width="1.5" PointX="1" PointY="3.25" />
+        <EntityTypeShape EntityType="UplatnicaModel.SifarnikRobe" Width="1.5" PointX="7.5" PointY="0.625" />
+        <AssociationConnector Association="UplatnicaModel.SifarnikPartnerOtpremnica" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="UplatnicaModel.ListaRobe" Width="1.5" PointX="4.875" PointY="3.125" />
+        <AssociationConnector Association="UplatnicaModel.ListaRobeSifarnikRobe" />
+        <AssociationConnector Association="UplatnicaModel.ListaRobeOtpremnica" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

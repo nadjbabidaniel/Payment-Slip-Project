@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otpremnica", "ModelFirstUplatnica\Otpremnica.csproj", "{15773B8D-18B7-4E48-B064-49F19F7CC086}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B753DB16-37F1-406D-AEDF-F3F31E9904FA} = {B753DB16-37F1-406D-AEDF-F3F31E9904FA}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UplatnicaWCFtoDb", "UplatnicaWCFtoDb\UplatnicaWCFtoDb.csproj", "{B753DB16-37F1-406D-AEDF-F3F31E9904FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM_WPF", "MVVM_WPF\MVVM_WPF.csproj", "{B866944B-26A2-48CE-8D46-924A57732353}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B753DB16-37F1-406D-AEDF-F3F31E9904FA} = {B753DB16-37F1-406D-AEDF-F3F31E9904FA}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaySlipWithEnityFramework", "PaySlipWithEnityFramework", "{CECAC4D9-B678-4ECD-A70E-C088F12F2B09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComDataOtpremnice", "..\..\ComDataOtpremnice\ComDataOtpremnice\ComDataOtpremnice\ComDataOtpremnice.csproj", "{5F66DE1D-93A1-4317-9333-6320E39B2747}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15773B8D-18B7-4E48-B064-49F19F7CC086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15773B8D-18B7-4E48-B064-49F19F7CC086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15773B8D-18B7-4E48-B064-49F19F7CC086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15773B8D-18B7-4E48-B064-49F19F7CC086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B753DB16-37F1-406D-AEDF-F3F31E9904FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B753DB16-37F1-406D-AEDF-F3F31E9904FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B753DB16-37F1-406D-AEDF-F3F31E9904FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B753DB16-37F1-406D-AEDF-F3F31E9904FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B866944B-26A2-48CE-8D46-924A57732353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B866944B-26A2-48CE-8D46-924A57732353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B866944B-26A2-48CE-8D46-924A57732353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B866944B-26A2-48CE-8D46-924A57732353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F66DE1D-93A1-4317-9333-6320E39B2747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F66DE1D-93A1-4317-9333-6320E39B2747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F66DE1D-93A1-4317-9333-6320E39B2747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F66DE1D-93A1-4317-9333-6320E39B2747}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F66DE1D-93A1-4317-9333-6320E39B2747} = {CECAC4D9-B678-4ECD-A70E-C088F12F2B09}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OtpremnicaDatabase" Class="ListaRobeLinqDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DANIEL\SQLEXPRESS;Initial Catalog=OtpremnicaDatabase;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OtpremnicaDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ListaRobes" Member="ListaRobes">
+    <Type Name="ListaRobe">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KolicinaRobe" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="NovaCenaRobe" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="UkupnaCenaRobe" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="SifarnikRobeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OtpremnicaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

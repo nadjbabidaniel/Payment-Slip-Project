@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Uplatnica" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:57716/Otpremnica.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:57716/Otpremnica.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:57716/Otpremnica.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UplatnicaWCFtoDb" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOtpremnica_insertOtpremnicu_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertOtpremnicu" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_insertOtpremnicu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertOtpremnicuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_getOtpremnicu_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOtpremnicu" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_getOtpremnicu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOtpremnicuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_obrisiOtpremnicu_InputMessage">
+    <wsdl:part name="parameters" element="tns:obrisiOtpremnicu" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_obrisiOtpremnicu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obrisiOtpremnicuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_updateOtpremnice_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateOtpremnice" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_updateOtpremnice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateOtpremniceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_OtpremnicaList_InputMessage">
+    <wsdl:part name="parameters" element="tns:OtpremnicaList" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_OtpremnicaList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OtpremnicaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_otpremnicaImaRobu_InputMessage">
+    <wsdl:part name="parameters" element="tns:otpremnicaImaRobu" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_otpremnicaImaRobu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:otpremnicaImaRobuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_postojiNazivOtpremniceUBazi_InputMessage">
+    <wsdl:part name="parameters" element="tns:postojiNazivOtpremniceUBazi" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_postojiNazivOtpremniceUBazi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:postojiNazivOtpremniceUBaziResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_SifarnikPartnerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SifarnikPartnerList" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_SifarnikPartnerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SifarnikPartnerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_SifarnikRobeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SifarnikRobeList" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_SifarnikRobeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SifarnikRobeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_SifarnikRobeListById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SifarnikRobeListById" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_SifarnikRobeListById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SifarnikRobeListByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_insertListuRobe_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertListuRobe" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_insertListuRobe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertListuRobeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_SifarnikPartnerListById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SifarnikPartnerListById" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_SifarnikPartnerListById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SifarnikPartnerListByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_brojRobeNaUplatnici_InputMessage">
+    <wsdl:part name="parameters" element="tns:brojRobeNaUplatnici" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_brojRobeNaUplatnici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:brojRobeNaUplatniciResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_UkupnaCenaRobePoUplatnici_InputMessage">
+    <wsdl:part name="parameters" element="tns:UkupnaCenaRobePoUplatnici" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_UkupnaCenaRobePoUplatnici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UkupnaCenaRobePoUplatniciResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_obrisiListuRobeNaOsnovuOtpremniceId_InputMessage">
+    <wsdl:part name="parameters" element="tns:obrisiListuRobeNaOsnovuOtpremniceId" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_obrisiListuRobeNaOsnovuOtpremniceId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obrisiListuRobeNaOsnovuOtpremniceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_listaRobePordukata_InputMessage">
+    <wsdl:part name="parameters" element="tns:listaRobePordukata" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_listaRobePordukata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listaRobePordukataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_listaRobeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:listaRobeById" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_listaRobeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listaRobeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_OtpremnicaListBasedOnPartnersId_InputMessage">
+    <wsdl:part name="parameters" element="tns:OtpremnicaListBasedOnPartnersId" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_OtpremnicaListBasedOnPartnersId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OtpremnicaListBasedOnPartnersIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_OtpremnicaListBasedOnDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:OtpremnicaListBasedOnDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_OtpremnicaListBasedOnDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OtpremnicaListBasedOnDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_OtpremnicaListBasedOnPartnerIdAndDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:OtpremnicaListBasedOnPartnerIdAndDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IOtpremnica_OtpremnicaListBasedOnPartnerIdAndDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OtpremnicaListBasedOnPartnerIdAndDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOtpremnica">
+    <wsdl:operation name="insertOtpremnicu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/insertOtpremnicu" message="tns:IOtpremnica_insertOtpremnicu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/insertOtpremnicuResponse" message="tns:IOtpremnica_insertOtpremnicu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOtpremnicu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/getOtpremnicu" message="tns:IOtpremnica_getOtpremnicu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/getOtpremnicuResponse" message="tns:IOtpremnica_getOtpremnicu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obrisiOtpremnicu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/obrisiOtpremnicu" message="tns:IOtpremnica_obrisiOtpremnicu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/obrisiOtpremnicuResponse" message="tns:IOtpremnica_obrisiOtpremnicu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateOtpremnice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/updateOtpremnice" message="tns:IOtpremnica_updateOtpremnice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/updateOtpremniceResponse" message="tns:IOtpremnica_updateOtpremnice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OtpremnicaList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/OtpremnicaList" message="tns:IOtpremnica_OtpremnicaList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/OtpremnicaListResponse" message="tns:IOtpremnica_OtpremnicaList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="otpremnicaImaRobu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/otpremnicaImaRobu" message="tns:IOtpremnica_otpremnicaImaRobu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/otpremnicaImaRobuResponse" message="tns:IOtpremnica_otpremnicaImaRobu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="postojiNazivOtpremniceUBazi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/postojiNazivOtpremniceUBazi" message="tns:IOtpremnica_postojiNazivOtpremniceUBazi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/postojiNazivOtpremniceUBaziResponse" message="tns:IOtpremnica_postojiNazivOtpremniceUBazi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SifarnikPartnerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/SifarnikPartnerList" message="tns:IOtpremnica_SifarnikPartnerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/SifarnikPartnerListResponse" message="tns:IOtpremnica_SifarnikPartnerList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SifarnikRobeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/SifarnikRobeList" message="tns:IOtpremnica_SifarnikRobeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/SifarnikRobeListResponse" message="tns:IOtpremnica_SifarnikRobeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SifarnikRobeListById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/SifarnikRobeListById" message="tns:IOtpremnica_SifarnikRobeListById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/SifarnikRobeListByIdResponse" message="tns:IOtpremnica_SifarnikRobeListById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertListuRobe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/insertListuRobe" message="tns:IOtpremnica_insertListuRobe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/insertListuRobeResponse" message="tns:IOtpremnica_insertListuRobe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SifarnikPartnerListById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/SifarnikPartnerListById" message="tns:IOtpremnica_SifarnikPartnerListById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/SifarnikPartnerListByIdResponse" message="tns:IOtpremnica_SifarnikPartnerListById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="brojRobeNaUplatnici">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/brojRobeNaUplatnici" message="tns:IOtpremnica_brojRobeNaUplatnici_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/brojRobeNaUplatniciResponse" message="tns:IOtpremnica_brojRobeNaUplatnici_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UkupnaCenaRobePoUplatnici">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/UkupnaCenaRobePoUplatnici" message="tns:IOtpremnica_UkupnaCenaRobePoUplatnici_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/UkupnaCenaRobePoUplatniciResponse" message="tns:IOtpremnica_UkupnaCenaRobePoUplatnici_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obrisiListuRobeNaOsnovuOtpremniceId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/obrisiListuRobeNaOsnovuOtpremniceId" message="tns:IOtpremnica_obrisiListuRobeNaOsnovuOtpremniceId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/obrisiListuRobeNaOsnovuOtpremniceIdResponse" message="tns:IOtpremnica_obrisiListuRobeNaOsnovuOtpremniceId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listaRobePordukata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/listaRobePordukata" message="tns:IOtpremnica_listaRobePordukata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/listaRobePordukataResponse" message="tns:IOtpremnica_listaRobePordukata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listaRobeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/listaRobeById" message="tns:IOtpremnica_listaRobeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/listaRobeByIdResponse" message="tns:IOtpremnica_listaRobeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OtpremnicaListBasedOnPartnersId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/OtpremnicaListBasedOnPartnersId" message="tns:IOtpremnica_OtpremnicaListBasedOnPartnersId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/OtpremnicaListBasedOnPartnersIdResponse" message="tns:IOtpremnica_OtpremnicaListBasedOnPartnersId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OtpremnicaListBasedOnDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/OtpremnicaListBasedOnDateTime" message="tns:IOtpremnica_OtpremnicaListBasedOnDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/OtpremnicaListBasedOnDateTimeResponse" message="tns:IOtpremnica_OtpremnicaListBasedOnDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OtpremnicaListBasedOnPartnerIdAndDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOtpremnica/OtpremnicaListBasedOnPartnerIdAndDateTime" message="tns:IOtpremnica_OtpremnicaListBasedOnPartnerIdAndDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOtpremnica/OtpremnicaListBasedOnPartnerIdAndDateTimeResponse" message="tns:IOtpremnica_OtpremnicaListBasedOnPartnerIdAndDateTime_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOtpremnica" type="tns:IOtpremnica">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertOtpremnicu">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/insertOtpremnicu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOtpremnicu">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/getOtpremnicu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obrisiOtpremnicu">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/obrisiOtpremnicu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOtpremnice">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/updateOtpremnice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OtpremnicaList">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/OtpremnicaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="otpremnicaImaRobu">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/otpremnicaImaRobu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postojiNazivOtpremniceUBazi">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/postojiNazivOtpremniceUBazi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SifarnikPartnerList">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/SifarnikPartnerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SifarnikRobeList">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/SifarnikRobeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SifarnikRobeListById">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/SifarnikRobeListById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertListuRobe">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/insertListuRobe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SifarnikPartnerListById">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/SifarnikPartnerListById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="brojRobeNaUplatnici">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/brojRobeNaUplatnici" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UkupnaCenaRobePoUplatnici">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/UkupnaCenaRobePoUplatnici" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obrisiListuRobeNaOsnovuOtpremniceId">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/obrisiListuRobeNaOsnovuOtpremniceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaRobePordukata">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/listaRobePordukata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaRobeById">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/listaRobeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OtpremnicaListBasedOnPartnersId">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/OtpremnicaListBasedOnPartnersId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OtpremnicaListBasedOnDateTime">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/OtpremnicaListBasedOnDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OtpremnicaListBasedOnPartnerIdAndDateTime">
+      <soap:operation soapAction="http://tempuri.org/IOtpremnica/OtpremnicaListBasedOnPartnerIdAndDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Uplatnica">
+    <wsdl:port name="BasicHttpBinding_IOtpremnica" binding="tns:BasicHttpBinding_IOtpremnica">
+      <soap:address location="http://localhost:57716/Otpremnica.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

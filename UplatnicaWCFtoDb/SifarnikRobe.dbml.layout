@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SifarnikRobe">
+  <DataContextMoniker Name="/SifarnikRobeDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9c509122-366a-4cf2-9747-3bd72c4c1cee" absoluteBounds="3.5, 2.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SifarnikRobeDataContext/SifarnikRobe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c85855e-efb3-4f5d-92c1-b8bb9d73de8f" absoluteBounds="3.515, 2.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

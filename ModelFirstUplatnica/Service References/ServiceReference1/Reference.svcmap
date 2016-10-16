@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6dc1dd01-d6b0-461e-bef8-b014471114c5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:57716/Otpremnica.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Otpremnica.xsd" MetadataType="Schema" ID="c50a23c1-dc0e-4e8e-a95f-a75c5cc65552" SourceId="1" SourceUrl="http://localhost:57716/Otpremnica.svc?xsd=xsd0" />
+    <MetadataFile FileName="Otpremnica1.xsd" MetadataType="Schema" ID="8b817c07-1e23-46d7-80b5-ff5e8f8c0632" SourceId="1" SourceUrl="http://localhost:57716/Otpremnica.svc?xsd=xsd1" />
+    <MetadataFile FileName="Otpremnica2.xsd" MetadataType="Schema" ID="5e249a5d-164e-4aa8-b2d3-2a95c4c3f720" SourceId="1" SourceUrl="http://localhost:57716/Otpremnica.svc?xsd=xsd2" />
+    <MetadataFile FileName="Uplatnica.wsdl" MetadataType="Wsdl" ID="76226c74-4aaa-45f9-ba0a-090916f728d6" SourceId="1" SourceUrl="http://localhost:57716/Otpremnica.svc?wsdl" />
+    <MetadataFile FileName="Otpremnica.disco" MetadataType="Disco" ID="8b4b30ea-9f43-4e3c-a7f5-1a5eb068e67a" SourceId="1" SourceUrl="http://localhost:57716/Otpremnica.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

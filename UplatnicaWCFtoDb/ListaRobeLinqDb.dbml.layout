@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ListaRobeLinqDb">
+  <DataContextMoniker Name="/ListaRobeLinqDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ed92746d-fc7c-4530-bc53-f18d4a92bfe8" absoluteBounds="4.375, 2.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/ListaRobeLinqDbDataContext/ListaRobe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ef9ce15-3a61-4894-aa45-088aa7d53253" absoluteBounds="4.39, 2.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UplatnicaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="UplatnicaModelStoreContainer">
+    <EntitySet Name="SifarnikPartners" EntityType="UplatnicaModel.Store.SifarnikPartners" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Otpremnicas" EntityType="UplatnicaModel.Store.Otpremnicas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SifarnikRobes" EntityType="UplatnicaModel.Store.SifarnikRobes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ListaRobes" EntityType="UplatnicaModel.Store.ListaRobes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="SifarnikPartnerOtpremnica" Association="UplatnicaModel.Store.SifarnikPartnerOtpremnica">
+      <End Role="SifarnikPartner" EntitySet="SifarnikPartners" />
+      <End Role="Otpremnica" EntitySet="Otpremnicas" />
+    </AssociationSet>
+    <AssociationSet Name="ListaRobeSifarnikRobe" Association="UplatnicaModel.Store.ListaRobeSifarnikRobe">
+      <End Role="ListaRobe" EntitySet="ListaRobes" />
+      <End Role="SifarnikRobe" EntitySet="SifarnikRobes" />
+    </AssociationSet>
+    <AssociationSet Name="ListaRobeOtpremnica" Association="UplatnicaModel.Store.ListaRobeOtpremnica">
+      <End Role="ListaRobe" EntitySet="ListaRobes" />
+      <End Role="Otpremnica" EntitySet="Otpremnicas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SifarnikPartners">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SifraPartnera" Type="int" Nullable="false" />
+    <Property Name="NazivPartnera" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mesto" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Otpremnicas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Datum" Type="datetime" Nullable="false" />
+    <Property Name="BrojOtpremnice" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SifarnikPartnerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SifarnikRobes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SifraRobe" Type="int" Nullable="false" />
+    <Property Name="NazivRobe" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JedinicaMere" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JedinicnaCena" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListaRobes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KolicinaRobe" Type="float" Nullable="false" />
+    <Property Name="NovaCenaRobe" Type="float" Nullable="false" />
+    <Property Name="UkupnaCenaRobe" Type="float" Nullable="false" />
+    <Property Name="SifarnikRobeId" Type="int" Nullable="false" />
+    <Property Name="OtpremnicaId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="SifarnikPartnerOtpremnica">
+    <End Role="SifarnikPartner" Type="UplatnicaModel.Store.SifarnikPartners" Multiplicity="1" />
+    <End Role="Otpremnica" Type="UplatnicaModel.Store.Otpremnicas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SifarnikPartner">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Otpremnica">
+        <PropertyRef Name="SifarnikPartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ListaRobeSifarnikRobe">
+    <End Role="ListaRobe" Type="UplatnicaModel.Store.ListaRobes" Multiplicity="*" />
+    <End Role="SifarnikRobe" Type="UplatnicaModel.Store.SifarnikRobes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="SifarnikRobe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ListaRobe">
+        <PropertyRef Name="SifarnikRobeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ListaRobeOtpremnica">
+    <End Role="ListaRobe" Type="UplatnicaModel.Store.ListaRobes" Multiplicity="*" />
+    <End Role="Otpremnica" Type="UplatnicaModel.Store.Otpremnicas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Otpremnica">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ListaRobe">
+        <PropertyRef Name="OtpremnicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="UplatnicaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="UplatnicaModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SifarnikPartners" EntityType="UplatnicaModel.SifarnikPartner" />
+          <EntitySet Name="Otpremnicas" EntityType="UplatnicaModel.Otpremnica" />
+          <EntitySet Name="SifarnikRobes" EntityType="UplatnicaModel.SifarnikRobe" />
+          <AssociationSet Name="SifarnikPartnerOtpremnica" Association="UplatnicaModel.SifarnikPartnerOtpremnica">
+            <End Role="SifarnikPartner" EntitySet="SifarnikPartners" />
+            <End Role="Otpremnica" EntitySet="Otpremnicas" />
+          </AssociationSet>
+          <EntitySet Name="ListaRobes" EntityType="UplatnicaModel.ListaRobe" />
+          <AssociationSet Name="ListaRobeSifarnikRobe" Association="UplatnicaModel.ListaRobeSifarnikRobe">
+            <End Role="ListaRobe" EntitySet="ListaRobes" />
+            <End Role="SifarnikRobe" EntitySet="SifarnikRobes" />
+          </AssociationSet>
+          <AssociationSet Name="ListaRobeOtpremnica" Association="UplatnicaModel.ListaRobeOtpremnica">
+            <End Role="ListaRobe" EntitySet="ListaRobes" />
+            <End Role="Otpremnica" EntitySet="Otpremnicas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SifarnikPartner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SifraPartnera" Type="Int32" Nullable="false" />
+          <Property Name="NazivPartnera" Type="String" Nullable="false" />
+          <Property Name="Mesto" Type="String" Nullable="false" />
+          <NavigationProperty Name="Otpremnicas" Relationship="UplatnicaModel.SifarnikPartnerOtpremnica" FromRole="SifarnikPartner" ToRole="Otpremnica" />
+        </EntityType>
+        <EntityType Name="Otpremnica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" />
+          <Property Name="BrojOtpremnice" Type="String" Nullable="false" />
+          <NavigationProperty Name="SifarnikPartner" Relationship="UplatnicaModel.SifarnikPartnerOtpremnica" FromRole="Otpremnica" ToRole="SifarnikPartner" />
+          <Property Name="SifarnikPartnerId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ListaRobes" Relationship="UplatnicaModel.ListaRobeOtpremnica" FromRole="Otpremnica" ToRole="ListaRobe" />
+        </EntityType>
+        <EntityType Name="SifarnikRobe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SifraRobe" Type="Int32" Nullable="false" />
+          <Property Name="NazivRobe" Type="String" Nullable="false" />
+          <Property Name="JedinicaMere" Type="String" Nullable="false" />
+          <Property Name="JedinicnaCena" Type="Double" Nullable="false" />
+          <NavigationProperty Name="ListaRobes" Relationship="UplatnicaModel.ListaRobeSifarnikRobe" FromRole="SifarnikRobe" ToRole="ListaRobe" />
+        </EntityType>
+        <Association Name="SifarnikPartnerOtpremnica">
+          <End Type="UplatnicaModel.SifarnikPartner" Role="SifarnikPartner" Multiplicity="1" />
+          <End Type="UplatnicaModel.Otpremnica" Role="Otpremnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SifarnikPartner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Otpremnica">
+              <PropertyRef Name="SifarnikPartnerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ListaRobe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SifarnikRobe" Relationship="UplatnicaModel.ListaRobeSifarnikRobe" FromRole="ListaRobe" ToRole="SifarnikRobe" />
+          <Property Name="KolicinaRobe" Type="Double" Nullable="false" />
+          <Property Name="NovaCenaRobe" Type="Double" Nullable="false" />
+          <Property Name="UkupnaCenaRobe" Type="Double" Nullable="false" />
+          <Property Name="SifarnikRobeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Otpremnica" Relationship="UplatnicaModel.ListaRobeOtpremnica" FromRole="ListaRobe" ToRole="Otpremnica" />
+          <Property Name="OtpremnicaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ListaRobeSifarnikRobe">
+          <End Type="UplatnicaModel.ListaRobe" Role="ListaRobe" Multiplicity="*" />
+          <End Type="UplatnicaModel.SifarnikRobe" Role="SifarnikRobe" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="SifarnikRobe">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ListaRobe">
+              <PropertyRef Name="SifarnikRobeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ListaRobeOtpremnica">
+          <End Type="UplatnicaModel.ListaRobe" Role="ListaRobe" Multiplicity="*" />
+          <End Type="UplatnicaModel.Otpremnica" Role="Otpremnica" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Otpremnica">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ListaRobe">
+              <PropertyRef Name="OtpremnicaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UplatnicaModelStoreContainer" CdmEntityContainer="UplatnicaModelContainer">
+    <EntitySetMapping Name="SifarnikPartners">
+      <EntityTypeMapping TypeName="IsTypeOf(UplatnicaModel.SifarnikPartner)">
+        <MappingFragment StoreEntitySet="SifarnikPartners">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SifraPartnera" ColumnName="SifraPartnera" />
+          <ScalarProperty Name="NazivPartnera" ColumnName="NazivPartnera" />
+          <ScalarProperty Name="Mesto" ColumnName="Mesto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Otpremnicas">
+      <EntityTypeMapping TypeName="IsTypeOf(UplatnicaModel.Otpremnica)">
+        <MappingFragment StoreEntitySet="Otpremnicas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="BrojOtpremnice" ColumnName="BrojOtpremnice" />
+          <ScalarProperty Name="SifarnikPartnerId" ColumnName="SifarnikPartnerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SifarnikRobes">
+      <EntityTypeMapping TypeName="IsTypeOf(UplatnicaModel.SifarnikRobe)">
+        <MappingFragment StoreEntitySet="SifarnikRobes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SifraRobe" ColumnName="SifraRobe" />
+          <ScalarProperty Name="NazivRobe" ColumnName="NazivRobe" />
+          <ScalarProperty Name="JedinicaMere" ColumnName="JedinicaMere" />
+          <ScalarProperty Name="JedinicnaCena" ColumnName="JedinicnaCena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListaRobes">
+      <EntityTypeMapping TypeName="IsTypeOf(UplatnicaModel.ListaRobe)">
+        <MappingFragment StoreEntitySet="ListaRobes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="KolicinaRobe" ColumnName="KolicinaRobe" />
+          <ScalarProperty Name="NovaCenaRobe" ColumnName="NovaCenaRobe" />
+          <ScalarProperty Name="UkupnaCenaRobe" ColumnName="UkupnaCenaRobe" />
+          <ScalarProperty Name="SifarnikRobeId" ColumnName="SifarnikRobeId" />
+          <ScalarProperty Name="OtpremnicaId" ColumnName="OtpremnicaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

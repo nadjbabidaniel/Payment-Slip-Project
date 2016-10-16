@@ -1,0 +1,96 @@
+﻿<Window x:Class="MVVM_WPF.EditOtpremnice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_WPF"
+        mc:Ignorable="d"
+        Title="Izmena_Otpremnice" Height="734.176" Width="1219.506" MinWidth="900" MinHeight="700">
+    <Grid Width="Auto" Height="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="239*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Width="Auto" Height="28" VerticalAlignment="Top" Margin="0,4,0,0">
+            <Label x:Name="label" Content="Datum Otpremnice:" Height="24" Width="119"/>
+            <DatePicker Text="{Binding FilterDatum, Mode=TwoWay}" Width="123" Margin="0,0,0,2"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Width="Auto" Height="28" VerticalAlignment="Top" Margin="0,4,0,0">
+            <Label x:Name="label1" Content="Broj Otpremnice:      " />
+            <TextBox x:Name="textBox" Text="{Binding BrojOtpremnice, Mode=TwoWay}" Height="22" TextWrapping="Wrap" Width="122" Margin="0,3" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Width="Auto" Height="28" Margin="0,5,0,0">
+            <Label x:Name="label2" Content="Partner: " Width="64"/>
+            <ComboBox x:Name="comboBox" ItemsSource="{Binding Partneri}" 
+                      SelectedItem="{Binding PartnerSelectedValue, Mode=TwoWay}" DisplayMemberPath="NazivPartnera" SelectedValuePath="Id" SelectedValue="{Binding PartnerSelectedValue.Id}" Height="20" Width="122" Margin="54,4,0,4" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Width="Auto" Height="Auto" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Vertical" Width="Auto" Height="Auto" VerticalAlignment="Bottom" Margin="8,0,0,0">
+                <Label x:Name="label3" Content="Roba"/>
+                <ComboBox x:Name="comboBox1" 
+                  ItemsSource="{Binding Roba}"
+                  SelectedItem="{Binding RobaSelectedValue, Mode=TwoWay}"
+                  DisplayMemberPath="NazivRobe"
+                  SelectedValuePath="Id"
+                  Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="Auto" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Label x:Name="label4" Content=" Kolicina"/>
+                <TextBox Text="{Binding Kolicina, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" x:Name="textBox1" Height="23" TextWrapping="Wrap" Margin="7,0,0,0" Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="236" Height="Auto" VerticalAlignment="Bottom">
+                <Button x:Name="button2" Content="DodajStavku" Command="{Binding DodajStavkuCommand}" Width="114" Height="32" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="120" Height="Auto" VerticalAlignment="Bottom">
+                <Button x:Name="button3" Content="IzbaciStavku" Command="{Binding IzbaciStavkuCommand}" Width="114" Height="32" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button x:Name="button" Content="Sacuvaj Izmene" Command="{Binding SacuvajIzmeneOtpremnicaCommand}" Width="112" Height="69" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button x:Name="button1" Content="Odustani" Command="{Binding ZatvoriProzorCommand}" Width="112" Height="32" />
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Top" Margin="0,10,0,0">
+            <Grid Width="Auto" Height="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="195*"/>
+                </Grid.RowDefinitions>
+                <DataGrid Grid.Row="0"
+            ItemsSource="{Binding GetKreiraneStavkeProsireno, Mode=TwoWay}" SelectedItem="{Binding EditGridSelectedItem, Mode=TwoWay}"
+            x:Name="dataGrid" AutoGenerateColumns="False">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Roba ID" 
+                                    Binding="{Binding ListaRobe.SifarnikRobeId}" CanUserSort="False" Width="1*" />
+                        <DataGridTextColumn Header="Naziv robe" 
+                                    Binding="{Binding NazivRobe}" CanUserSort="False" Width="3*" />
+                        <DataGridTextColumn Header="Količina" 
+                                    Binding="{Binding ListaRobe.KolicinaRobe}" CanUserSort="False" Width="1*" />
+                        <DataGridTextColumn Header="JM" 
+                                    Binding="{Binding JedinicaMere}" CanUserSort="False" Width="1*" />
+                        <DataGridTextColumn Header="Prodajna cena" 
+                                    Binding="{Binding ListaRobe.NovaCenaRobe}" CanUserSort="False" Width="2*" />
+                        <DataGridTextColumn Header="Vrednost" 
+                                    Binding="{Binding ListaRobe.UkupnaCenaRobe}" CanUserSort="False" Width="2*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <TextBlock x:Name="textBlock" Text="{Binding UkupnaVrednostSvihStavki}" HorizontalAlignment="Left" TextWrapping="Wrap" Width="60"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Window>

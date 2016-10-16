@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UplatnicaLinqDb">
+  <DataContextMoniker Name="/UplatnicaLinqDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4c40dc5b-ae8f-441d-80fe-dadd45daad6c" absoluteBounds="3.375, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/UplatnicaLinqDbDataContext/Otpremnica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76c1e0fb-33e2-4f4d-9cac-d04495d88674" absoluteBounds="3.39, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

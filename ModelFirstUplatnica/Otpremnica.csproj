@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15773B8D-18B7-4E48-B064-49F19F7CC086}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModelFirstUplatnica</RootNamespace>
+    <AssemblyName>ModelFirstUplatnica</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dodavanje Otpremnice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodavanje Otpremnice.Designer.cs">
+      <DependentUpon>Dodavanje Otpremnice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaOtpremnice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmenaOtpremnice.Designer.cs">
+      <DependentUpon>IzmenaOtpremnice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaRobe.cs">
+      <DependentUpon>UplatnicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Otpremnica.cs">
+      <DependentUpon>UplatnicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pocetna.Designer.cs">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SifarnikPartner.cs">
+      <DependentUpon>UplatnicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SifarnikRobe.cs">
+      <DependentUpon>UplatnicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UplatnicaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UplatnicaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UplatnicaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UplatnicaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UplatnicaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UplatnicaModel.edmx</DependentUpon>
+    </Compile>
+    <None Include="Properties\DataSources\UplatnicaWCFtoDb.ListaRobe.datasource" />
+    <None Include="Properties\DataSources\UplatnicaWCFtoDb.Otpremnica.datasource" />
+    <None Include="Properties\DataSources\UplatnicaWCFtoDb.SifarnikPartner.datasource" />
+    <None Include="Properties\DataSources\UplatnicaWCFtoDb.SifarnikRobe.datasource" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="UplatnicaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UplatnicaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Service References\ServiceReference1\Otpremnica.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Otpremnica1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Otpremnica2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Uplatnica.wsdl" />
+    <None Include="UplatnicaModel.edmx.diagram">
+      <DependentUpon>UplatnicaModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\Otpremnica.disco" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="UplatnicaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UplatnicaModel.Context.cs</LastGenOutput>
+      <DependentUpon>UplatnicaModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="UplatnicaModel.edmx.sql" />
+    <Content Include="UplatnicaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UplatnicaModel.cs</LastGenOutput>
+      <DependentUpon>UplatnicaModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UplatnicaWCFtoDb\UplatnicaWCFtoDb.csproj">
+      <Project>{b753db16-37f1-406d-aedf-f3f31e9904fa}</Project>
+      <Name>UplatnicaWCFtoDb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dodavanje Otpremnice.resx">
+      <DependentUpon>Dodavanje Otpremnice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmenaOtpremnice.resx">
+      <DependentUpon>IzmenaOtpremnice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pocetna.resx">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
